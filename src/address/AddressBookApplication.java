@@ -1,15 +1,31 @@
 package address;
 import address.data.AddressBook;
+import address.Menu;
 
 /** main AddressBookApplication Class: purpose is to call a few methods from the AddressBook Class
  **/
 class AddressBookApplication {
     // This method calls on methods from the AddressBook class
     public static void main(String[] args) {
+        Menu menus = new Menu();
+        //AddressBook at = new AddressBook();
+
+        menus.menuSelection();
+
+
+
+
+
+        /**
         // Creates an instance of AddressBook called addressbook
         AddressBook addressbook = new AddressBook();
         // Calls initAddressBookExercise function
         initAddressBookExercise();
+         **/
+
+
+
+
 
 
         /** Exercise 1 code for Menu (wont be used for exercise 2)
@@ -26,6 +42,8 @@ class AddressBookApplication {
 
     // initAddressBookExercise METHOD: Creates an instance of AddressBook (called ab)
     public static void initAddressBookExercise(){
+
+        /**
         // Creates an instance of AddressBook called ab
         AddressBook ab =  new AddressBook();
         // Adds entries that has been hard coded in AddressBook that is linked to an instance of AddresssEntry
@@ -41,6 +59,6 @@ class AddressBookApplication {
                 "54321", "098-765-4321","SuperRealEmail@gmail.com");
         ab2.list();
 
+    */
     }
-
-    }
+}

@@ -1,63 +1,139 @@
 package address;
-
+import address.data.AddressBook;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.util.*;
+import java.io.IOException;
 /** Class Menu: class made up of static methods that prompts user to enter detials to fill out AddressBook
  **/
 public class Menu {
-    /** prompts user for first name;
-     */
+    AddressBook ab = new AddressBook();
+    public void menuSelection(){
+        System.out.println("*********************");
+        System.out.println("Please enter your menu selection");
+        System.out.println("a) Loading from File");
+        System.out.println("b) Addition");
+        System.out.println("c) Removal");
+        System.out.println("d) Find");
+        System.out.println("e) Listing");
+        System.out.println("f) Quit");
+        System.out.println("************************");
+        System.out.println("Please make a selection: ");
+        Scanner options = new Scanner(System.in);
+        String selection = options.nextLine();
+        System.out.println("You Selected: " + selection);
+            switch (selection){
+                case "a":
+                    prompt_File();
+                    break;
+                case "b":
+                    ab.add();
+                    break;
+                case "c":
+                    ab.remove();
+                    break;
+                case "d":
+                    ab.find();
+                    break;
+                case "e":
+                    ab.listing();
+                    break;
+                case "f":
+                    ab.quit();
+                    break;
+                default:
+                    System.out.println("Invalid selection made!");
+                    menuSelection();
+
+
+
+        }
+
+
+
+    }
+
+
     public static String prompt_FirstName(){
+        Scanner myObj = new Scanner(System.in);
         System.out.println("First Name: ");
-        // return 'Jane' as default
-        return "Jane";
+        String firstName = myObj.nextLine();
+        return firstName;
     }
-
-    // prompts user for Last Name
     public static String prompt_LastName(){
-       System.out.println("Last Name: ");
-       // return 'Smith' as default
-       return "Smith";
+        Scanner myObj =  new Scanner(System.in);
+        System.out.println("Last Name: ");
+        String lastName = myObj.nextLine();
+        return lastName;
     }
 
-    // prompts user for Street address
     public static String prompt_Street(){
+        Scanner myObj = new Scanner(System.in);
         System.out.println("Street: ");
-        // return '101 Willow Dr' as default
-        return "101 Willow Dr";
+        String street = myObj.nextLine();
+        return street;
     }
 
-    // prompt user for City address
     public static String prompt_City(){
+        Scanner myObj = new Scanner(System.in);
         System.out.println("City: ");
-        // return 'Whiterun' as default
-        return "Whiterun";
+        String city = myObj.nextLine();
+        return city;
     }
-
-    // prompt user for State address
     public static String prompt_State(){
+        Scanner myObj = new Scanner(System.in);
         System.out.println("State: ");
-        // return 'CA' as default
-        return "CA";
+        String state = myObj.nextLine();
+        return state;
     }
-
-    // prompt user for Zip address
     public static String prompt_Zip(){
+        Scanner myObj = new Scanner(System.in);
         System.out.println("Zip: ");
-        // return '12345' as default
-        return "12345";
+        String zip = myObj.nextLine();
+        return zip;
+    }
+    public static String prompt_Phone(){
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("Phone: ");
+        String phone = myObj.nextLine();
+        return phone;
     }
 
-    // prompt user for Telephone number
-    public static String prompt_Telephone(){
-        System.out.println("Telephone: ");
-        // return '015-882-3005' as default
-        return "015-882-3005";
-    }
-
-    // prompt user for Email address
     public static String prompt_Email(){
+        Scanner myObj = new Scanner(System.in);
         System.out.println("Email: ");
-        // return 'student@horizon.csueastbay.edu' as default
-        return "student@horizon.csueastbay.edu";
+        String email = myObj.nextLine();
+        return email;
     }
+
+
+    public static String prompt_File(){
+        try{
+            Scanner myObj = new Scanner(System.in);
+            System.out.println("Enter File Name to edit: ");
+            String newFile = myObj.nextLine();
+            File currFile = new File(newFile);
+            if (currFile.createNewFile()){
+                System.out.println("File created: " + currFile.getName());
+            }
+            else{
+                System.out.println("File Found: ");
+            }
+            return currFile.toString();
+        }
+        catch(IOException e ) {
+            System.out.println("An error occured: ");
+            e.printStackTrace();
+        }
+        return "meh";
+    }
+
+
+
+
+
+
 
 }
