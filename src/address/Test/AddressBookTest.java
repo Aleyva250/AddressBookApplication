@@ -2,6 +2,7 @@ package address.Test;
 import address.data.AddressBook;
 
 public class AddressBookTest {
+    //
     AddressBook ab = new AddressBook();
     // Most methods in 'AddressBook' calls on another method from different classes
 
