@@ -40,6 +40,7 @@ public class AddressEntry {
             for (Map.Entry<String,String> entry:addressEntryList.entrySet()){
                 newWrite.write(entry.getKey() + ": "+ entry.getValue() + " ");
             }
+            newWrite.newLine();
             // closes text file
             newWrite.close();
             // prints message letting user know that file has been updated
@@ -160,7 +161,6 @@ public class AddressEntry {
                     //renames temp file with current text file's name
                     boolean successful = tempFile.renameTo(inputFile);
                 }
-
             }
             //closes main file
             myFind.close();

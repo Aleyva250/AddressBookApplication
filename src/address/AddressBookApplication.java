@@ -1,4 +1,9 @@
 package address;
+//imports only for testing purposes
+import address.Test.AddressBookTest;
+import address.Test.menuTesting;
+import address.Test.addressEntryTest;
+/////////////////////////////////
 
 /** main AddressBookApplication Class: purpose is call on 'Menu' Classs
  **/
@@ -9,6 +14,10 @@ class AddressBookApplication {
         Menu menus = new Menu();
         // calls 'menuSelection' method which brings up a menu for user to choose from
         menus.menuSelection();
+
+
+
+
 
     }
 
